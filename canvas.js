@@ -26,4 +26,4 @@ function setCanvasDimensions() {
 window.addEventListener("resize", (event) => {
   setCanvasDimensions();
 });
-export { initCanvas, canvas, ctx };
+export { initCanvas, canvas, ctx }; //
