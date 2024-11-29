@@ -1,8 +1,10 @@
 import { initCanvas } from "./canvas.js";
+import { playMusic } from "./playMusic.js";
 
-function run() {
-  window.addEventListener("DOMContentLoaded", () => {
+async function run() {
+  window.addEventListener("DOMContentLoaded", async () => {
     initCanvas();
   });
 }
+
 run();

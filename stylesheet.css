@@ -1,0 +1,104 @@
+Julia Demitraszek body {
+  background-image: url("images/board-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 100vh;
+  cursor: none;
+  overflow: hidden;
+}
+
+.cursor-image {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  display: none; /* Initially hidden */
+  transform: translate(-50%, -50%); /* Center the image at the cursor */
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heart {
+  width: 70%;
+  height: 70%;
+}
+
+.score {
+  color: white;
+  font-size: 5vw; /* Font size adjusts to 5% of the viewport width */
+  width: auto; /* Let the width adjust naturally based on content */
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.lump_of_hearts {
+  display: flex;
+  gap: 2%;
+  margin: 0 2%; /* Space between hearts */
+  width: 10%; /* Responsive width */
+  height: 90%;
+}
+
+.zombie {
+  width: 10.5vw; /* Width of a single frame */
+  height: 40vw; /* Height of a single frame */
+  background-image: url("images/walkingdead.png");
+  background-repeat: no-repeat;
+  pointer-events: all;
+  position: absolute; /* Allow movement on x-axis */
+  cursor: pointer; /* Indicate it’s clickable */
+}
+
+.red-border-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  border: 5px solid red; /* Red border */
+  color: white;
+  text-align: center;
+  z-index: 1000; /* Ensure it appears on top */
+  display: none; /* Hidden by default */
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 999; /* Below the pop-up */
+  display: none; /* Hidden by default */
+}
+
+/* Button styling */
+.popup-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: red;
+  color: white;
+  border: none;
+  pointer-events: all;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2000;
+}
+
+.popup-button:hover {
+  background-color: darkred;
+}

@@ -4,23 +4,25 @@ import { getRandomFloat } from "./getRandomFloat.js";
 import { health, setHealth } from "./health.js";
 import { checkHitbox } from "./checkHitbox.js";
 import { canvas } from "./canvas.js";
+import { gameEnded } from "./endGame.js";
 
-const minStartingX = 1300;
-const maxStartingX = 2000;
+const minStartingX = 2000;
+const maxStartingX = 3000;
 const minStartingY = 0;
 const maxStartingY = 300;
 const minSpeed = 0.5;
 const maxSpeed = 3;
-const minScale = 0.2;
+const minScale = 0.3;
 const maxScale = 2;
 const speedMultiplier = 3;
 const spawnZombieChange = 0.05;
-const zombies = [];
+let zombies = [];
 
 let gameTime = 0;
 let difficultyMultiplier = 1;
 
 function spawnZombie() {
+  if (gameEnded) return;
   const difficulty = Math.min(difficultyMultiplier, 3);
 
   zombies.push({
@@ -50,6 +52,7 @@ function handleZombies() {
   let zombieIndexToRemove = null;
 
   zombies.forEach((zombie, i) => {
+    if (zombie.y < 0 && zombie.y > window.innerHeight) return;
     zombie.x -= zombie.speed * speedMultiplier;
     if (zombie.x < -zombieWidth / 2) {
       setHealth(health - 1);
