@@ -16,7 +16,7 @@ function initCanvas() {
   initMouse();
   animate();
   canvas.addEventListener("click", () => {
-    if (!musicPlayed) playMusic();
+    // if (!musicPlayed) playMusic();
     musicPlayed = true;
   });
 }
